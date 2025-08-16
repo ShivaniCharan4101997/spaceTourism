@@ -15,7 +15,7 @@ const Technology = () => {
       <div
         className="
           fixed inset-0 -z-10
-          bg-top bg-left bg-cover bg-no-repeat  
+          bg-top  bg-cover bg-no-repeat  
           bg-[url('/assets/technology/background-technology-mobile.jpg')]
           md:bg-[url('/assets/technology/background-technology-tablet.jpg')]
           lg:bg-[url('/assets/technology/background-technology-desktop.jpg')]

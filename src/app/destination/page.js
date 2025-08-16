@@ -23,7 +23,7 @@ const Destination = () => {
       <div
         className="
           fixed inset-0 -z-10 
-          bg-top bg-left bg-cover bg-no-repeat  
+          bg-top  bg-cover bg-no-repeat  
           bg-[url('/assets/destination/background-destination-mobile.jpg')]
           md:bg-[url('/assets/destination/background-destination-tablet.jpg')]
           lg:bg-[url('/assets/destination/background-destination-desktop.jpg')]

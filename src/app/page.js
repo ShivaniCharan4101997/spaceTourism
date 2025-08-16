@@ -14,7 +14,7 @@ const Home = () => {
       <div
         className="
           fixed inset-0 -z-10 
-          bg-top bg-left bg-cover bg-no-repeat  
+          bg-top  bg-cover bg-no-repeat  
           bg-[url('/assets/home/background-home-mobile.jpg')]
           md:bg-[url('/assets/home/background-home-tablet.jpg')]
           lg:bg-[url('/assets/home/background-home-desktop.jpg')]

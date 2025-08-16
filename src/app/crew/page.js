@@ -16,7 +16,7 @@ const Crew = () => {
       <div
         className="
           fixed inset-0 -z-10
-          bg-top bg-left bg-cover bg-no-repeat  
+          bg-top bg-cover bg-no-repeat  
           bg-[url('/assets/crew/background-crew-mobile.jpg')]
           md:bg-[url('/assets/crew/background-crew-tablet.jpg')]
           lg:bg-[url('/assets/crew/background-crew-desktop.jpg')]
