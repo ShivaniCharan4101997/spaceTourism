@@ -1,0 +1,62 @@
+{
+  "destinations": [
+    {
+      "name": "Moon",
+      "images": {
+        "png": "/assets/destination/image-moon.png",
+        "webp": "/assets/destination/image-moon.webp"
+      },
+      "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+      "distance": "384,400 km",
+      "travel": "3 days"
+    },
+    {
+      "name": "Mars",
+      "images": {
+        "png": "/assets/destination/image-mars.png",
+        "webp": "/assets/destination/image-mars.webp"
+      },
+      "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons...",
+      "distance": "225 mil. km",
+      "travel": "9 months"
+    }
+  ],
+  "crew": [
+    {
+      "name": "Douglas Hurley",
+      "images": {
+        "png": "/assets/crew/image-douglas-hurley.png",
+        "webp": "/assets/crew/image-douglas-hurley.webp"
+      },
+      "role": "Commander",
+      "bio": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut..."
+    },
+    {
+      "name": "Mark Shuttleworth",
+      "images": {
+        "png": "/assets/crew/image-mark-shuttleworth.png",
+        "webp": "/assets/crew/image-mark-shuttleworth.webp"
+      },
+      "role": "Mission Specialist",
+      "bio": "Mark Richard Shuttleworth is the founder and CEO of Canonical..."
+    },
+    {
+      "name": "Victor Glover",
+      "images": {
+        "png": "/assets/crew/image-victor-glover.png",
+        "webp": "/assets/crew/image-victor-glover.webp"
+      },
+      "role": "Pilot",
+      "bio": "Pilot on the first operational flight of the SpaceX Crew Dragon..."
+    },
+    {
+      "name": "Anousheh Ansari",
+      "images": {
+        "png": "/assets/crew/image-anousheh-ansari.png",
+        "webp": "/assets/crew/image-anousheh-ansari.webp"
+      },
+      "role": "Flight Engineer",
+      "bio": "Anousheh Ansari is an Iranian American engineer..."
+    }
+  ]
+}
