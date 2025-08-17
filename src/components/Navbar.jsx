@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { usePathname } from "next/navigation"; // 👈
+import { usePathname } from "next/navigation";
 
 const NavLinks = [
   { href: "/", number: "00", text: "Home" },
@@ -14,11 +14,11 @@ const NavLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // 👈 detect active page
+  const pathname = usePathname();
 
   return (
-    <nav className="bg-transparent fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
+    <nav className="bg-transparent fixed top-0 left-0 w-full mt-4 z-50">
+      <div className="container mx-auto flex items-center justify-between  py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -35,10 +35,12 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div
           className="
-            hidden md:flex space-x-6 
-            backdrop-blur-[2px] bg-[rgba(255,255,255,0.1)] w-[60%] shadow-lg
-            py-6 px-8
+             hidden md:flex space-x-6
+    absolute top-0 right-0 h-full
+    backdrop-blur-lg bg-[rgba(255,255,255,0.1)] shadow-lg
+    py-6 px-8
           "
+          style={{ width: "50%" }}
         >
           {NavLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -46,7 +48,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative uppercase tracking-wide text-white group"
+                className="relative uppercase tracking-wide text-white z-20"
               >
                 <span className="font-bold mr-2">{link.number}</span>
                 {link.text}
