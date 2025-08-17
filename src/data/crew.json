@@ -1,26 +1,4 @@
 {
-  "destinations": [
-    {
-      "name": "Moon",
-      "images": {
-        "png": "/assets/destination/image-moon.png",
-        "webp": "/assets/destination/image-moon.webp"
-      },
-      "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
-      "distance": "384,400 km",
-      "travel": "3 days"
-    },
-    {
-      "name": "Mars",
-      "images": {
-        "png": "/assets/destination/image-mars.png",
-        "webp": "/assets/destination/image-mars.webp"
-      },
-      "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons...",
-      "distance": "225 mil. km",
-      "travel": "9 months"
-    }
-  ],
   "crew": [
     {
       "name": "Douglas Hurley",
@@ -29,7 +7,7 @@
         "webp": "/assets/crew/image-douglas-hurley.webp"
       },
       "role": "Commander",
-      "bio": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut..."
+      "bio":  "Meet your crew Commander Douglas Hurley Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
     },
     {
       "name": "Mark Shuttleworth",
@@ -38,7 +16,7 @@
         "webp": "/assets/crew/image-mark-shuttleworth.webp"
       },
       "role": "Mission Specialist",
-      "bio": "Mark Richard Shuttleworth is the founder and CEO of Canonical..."
+      "bio": "Meet your crew Mission Specialist Mark Shuttleworth Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
     },
     {
       "name": "Victor Glover",
@@ -47,7 +25,7 @@
         "webp": "/assets/crew/image-victor-glover.webp"
       },
       "role": "Pilot",
-      "bio": "Pilot on the first operational flight of the SpaceX Crew Dragon..."
+      "bio": "Meet your crew Pilot Victor Glover Victor Jerome Glover Jr. is a NASA astronaut of the class of 2013. He is a United States Navy pilot and has served as a test pilot."
     },
     {
       "name": "Anousheh Ansari",
@@ -56,7 +34,8 @@
         "webp": "/assets/crew/image-anousheh-ansari.webp"
       },
       "role": "Flight Engineer",
-      "bio": "Anousheh Ansari is an Iranian American engineer..."
+      "bio": "Meet your crew Flight Engineer Anousheh Ansari Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
     }
   ]
 }
+
