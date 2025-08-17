@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent mt-4">
       <div className="container mx-auto flex items-center justify-between py-3 relative">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center ml-8 md:ml-4">
           <Image
             src="/assets/shared/logo.svg"
             alt="Logo"
@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Icon */}
         <button
-          className="md:hidden focus:outline-none"
+          className="md:hidden mr-8 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}

@@ -1,88 +1,125 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
-import data from "@/data/technology.json";
-import MainHeading from "@/components/MainHeading";
-import Navbar from "@/components/Navbar";
 
-const Technology = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const technologies = data.technology;
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+const NavLinks = [
+  { href: "/", number: "00", text: "Home" },
+  { href: "/destination", number: "01", text: "Destination" },
+  { href: "/crew", number: "02", text: "Crew" },
+  { href: "/technology", number: "03", text: "Technology" },
+];
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <>
-      {/* 🔹 Background layer */}
-      <div
-        className="
-          fixed inset-0 -z-10
-          bg-top  bg-cover bg-no-repeat  
-          bg-[url('/assets/technology/background-technology-mobile.jpg')]
-          md:bg-[url('/assets/technology/background-technology-tablet.jpg')]
-          lg:bg-[url('/assets/technology/background-technology-desktop.jpg')]
-        "
-      />
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent mt-4">
+      <div className="container mx-auto flex items-center justify-between py-3 relative">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/assets/shared/logo.svg"
+            alt="Logo"
+            width={48}
+            height={48}
+          />
+        </Link>
 
-      {/* 🔹 Foreground content */}
-      <Navbar />
+        {/* Line separator */}
+        <div className="hidden md:block flex-1 mx-6 h-px bg-white/30" />
 
-      <div className="max-w-[90vw] mx-auto mt-22">
-        {/* Main Heading */}
-        <MainHeading count="03" title="Space launch 101" />
-
-        <div className="flex flex-col md:flex-row items-center justify-between p-2 gap-8">
-          {/* Buttons */}
-          <div className="flex md:flex-col gap-4">
-            {technologies.map((tech, index) => (
-              <button
-                key={tech.id}
-                onClick={() => setActiveIndex(index)}
-                className={`w-16 h-16 rounded-full border font-medium transition ${
-                  activeIndex === index
-                    ? "bg-white text-black"
-                    : "bg-transparent text-2xl border-slate-50 text-white hover:bg-white/20 border-[1px]"
-                }`}
+        {/* Desktop Menu */}
+        <div
+          className="
+            hidden md:flex items-center space-x-8
+            absolute top-0 right-0 h-full
+            backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg
+            px-12
+          "
+          style={{ width: "55%" }}
+        >
+          {NavLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`
+                  relative uppercase tracking-widest text-white transition-colors
+                  hover:text-gray-200
+                `}
               >
-                {tech.id}
-              </button>
-            ))}
-          </div>
-
-          {/* Content */}
-          <div className="max-w-lg text-center md:text-left space-y-3 px-10">
-            <p className="text-gray-400 uppercase tracking-widest">
-              The terminology...
-            </p>
-            <h2 className="text-5xl font-light uppercase leading-tight text-white">
-              {technologies[activeIndex].name}
-            </h2>
-            <p className="text-slate-400 text-lg font-light">
-              {technologies[activeIndex].description}
-            </p>
-          </div>
-
-          {/* Images */}
-          <div>
-            {/* Mobile (Landscape) */}
-            <Image
-              src={technologies[activeIndex].images.landscape}
-              alt={technologies[activeIndex].name}
-              width={500}
-              height={300}
-              className="object-cover block md:hidden"
-            />
-            {/* Desktop (Portrait) */}
-            <Image
-              src={technologies[activeIndex].images.portrait}
-              alt={technologies[activeIndex].name}
-              width={500}
-              height={500}
-              className="object-cover hidden md:block"
-            />
-          </div>
+                <span className="font-bold mr-2">{link.number}</span>
+                {link.text}
+                {/* Underline */}
+                <span
+                  className={`
+                    absolute left-0 -bottom-2 h-[2px] bg-white transition-all duration-300
+                    ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+                  `}
+                />
+              </Link>
+            );
+          })}
         </div>
-      </div>
-    </>
-  );
-};
 
-export default Technology;
+        {/* Mobile Menu Icon */}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+        >
+          <Image
+            src={
+              isOpen
+                ? "/assets/shared/icon-close.svg"
+                : "/assets/shared/icon-hamburger.svg"
+            }
+            alt="Menu"
+            width={24}
+            height={24}
+          />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`
+          md:hidden absolute top-full left-0 w-full
+          backdrop-blur-lg bg-white/10 border-t border-white/20 shadow-lg
+          p-6 space-y-6 transition-all duration-300
+          ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+        `}
+      >
+        {NavLinks.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`
+                block uppercase tracking-widest text-white relative
+                ${isActive ? "font-bold" : ""}
+              `}
+              onClick={() => setIsOpen(false)}
+            >
+              <span className="font-bold mr-2">{link.number}</span>
+              {link.text}
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-[2px] bg-white transition-all duration-300
+                  ${isActive ? "w-full" : "w-0"}
+                `}
+              />
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}
