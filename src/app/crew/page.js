@@ -26,7 +26,7 @@ const Crew = () => {
       {/* 🔹 Navbar */}
       <Navbar />
 
-      <div className="max-w-[80vw] mx-auto mt-32">
+      <div className="max-w-[80vw] mx-auto mt-52">
         {/* Heading */}
         <MainHeading count="02" title="Meet your crew" />
 

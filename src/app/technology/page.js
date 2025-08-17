@@ -25,7 +25,7 @@ const Technology = () => {
       {/* 🔹 Foreground content */}
       <Navbar />
 
-      <div className="max-w-[90vw] mx-auto mt-32">
+      <div className="max-w-[80vw] mx-auto mt-52">
         {/* Main Heading */}
         <MainHeading count="03" title="Space launch 101" />
 
