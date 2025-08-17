@@ -1,6 +1,5 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Container from "@/components/Container";
 import { Barlow_Condensed, Barlow } from "next/font/google";
 
 // Google Fonts
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
         className={`${barlow.className} `}
       >
         <Navbar />
-        <Container>{children}</Container>
+        <>{children}</>
       </body>
     </html>
   );

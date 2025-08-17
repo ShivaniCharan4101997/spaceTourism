@@ -33,7 +33,7 @@ const Destination = () => {
       {/* 🔹 Foreground content */}
       <Navbar />
 
-      <div className="max-w-[80vw] mx-auto flex flex-col items-center md:items-start mt-22">
+      <div className="max-w-[80vw] mx-auto flex flex-col items-center md:items-start mt-32">
         {/* destination heading */}
         <MainHeading count="01" title="Pick your destination" />
 

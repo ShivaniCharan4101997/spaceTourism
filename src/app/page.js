@@ -24,7 +24,7 @@ const Home = () => {
       {/* 🔹 Foreground */}
       <Navbar />
 
-      <div className="max-w-[80vw] mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center mt-22 gap-12">
+      <div className="max-w-[80vw] mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center mt-52 gap-12">
         <div
           className="
             text-center md:text-start
