@@ -33,28 +33,26 @@ const Crew = () => {
         <div className="grid md:grid-cols-2 place-items-center gap-16 mt-10">
           {/* Text content */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
-<div className="flex justify-center w-[400px] h-[500px]">
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={crew[activeIndex].images.webp}
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -50 }}
-      transition={{ duration: 0.6 }}
-      className="w-full h-full"
-    >
-      <Image
-        src={crew[activeIndex].images.webp}
-        alt={crew[activeIndex].name}
-        width={400}
-        height={500}
-        className="object-contain w-full h-full"
-        priority
-      />
-    </motion.div>
-  </AnimatePresence>
-</div>
-
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={crew[activeIndex].name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center md:items-start text-center md:text-left gap-6"
+              >
+                <h3 className="uppercase text-gray-400 text-xl md:text-2xl">
+                  {crew[activeIndex].role}
+                </h3>
+                <h2 className="text-white text-3xl md:text-5xl uppercase font-light">
+                  {crew[activeIndex].name}
+                </h2>
+                <p className="text-slate-400 text-lg font-light whitespace-normal break-words leading-relaxed max-w-xl">
+                  {crew[activeIndex].bio}
+                </p>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Dots Navigation */}
             <div className="flex gap-4 mt-6">
@@ -73,7 +71,7 @@ const Crew = () => {
           </div>
 
           {/* Crew Image */}
-          <div className="flex justify-center">
+          <div className="flex justify-center w-[400px] h-[500px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={crew[activeIndex].images.webp}
@@ -81,13 +79,15 @@ const Crew = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6 }}
+                className="w-full h-full"
               >
                 <Image
                   src={crew[activeIndex].images.webp}
                   alt={crew[activeIndex].name}
                   width={400}
                   height={500}
-                  className="object-contain"
+                  className="object-contain w-full h-full"
+                  priority
                 />
               </motion.div>
             </AnimatePresence>
